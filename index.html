@@ -1,182 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <meta name="author" content="Mayrel P. Aris">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mayrel P. Aris - Portfolio</title>
+    <style>
+        :root {
+            --primary-color: #4a4a4a;
+            --accent-color: #6a5acd;
+            --background-color: #f4f4f8;
+            --text-color: #333;
+        }
 
-      <title>Mayrel P. Aris  - NISU | CICS</title>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-      <!-- stylesheet -->
-      <link rel="stylesheet" href="style.css">
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
 
-      <!-- bootstrap cdns -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-      <!-- google fonts -->
-      <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+        .hero {
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 50px 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
 
-      <!-- terminal effect -->
-      <script src="t.min.js"></script>
+        .hero-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 40px;
+            border: 5px solid white;
+        }
 
-      <!-- for on scroll animations -->
-      <link rel="stylesheet" href="animate.css">
-      <script src="wow.min.js"></script>
+        .hero-content {
+            flex-grow: 1;
+        }
 
+        .hero-content h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.2em;
+            opacity: 0.8;
+        }
+
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .section h2 {
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .skills, .hobbies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag, .hobby-tag {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-tag:hover, .hobby-tag:hover {
+            transform: scale(1.05);
+        }
+
+        .contact-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info {
+            flex-grow: 1;
+        }
+
+        .contact-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .contact-icons a {
+            color: var(--accent-color);
+            font-size: 1.5em;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-icons a:hover {
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-image {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .contact-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-icons {
+                margin-top: 20px;
+                justify-content: center;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-      <div class="wrapper">
-
-            <!--------------- navbar starts here --------------->
-            <nav>
-                  <span id="brand">
-                        <a href="index.html">Mayrel P. Aris</a>
-                  </span>
-
-                  <ul id="menu">
-                        <li><a href="index.html">home<span>.</span></a></li>
-                        <li><a href="skills.html">skills<span>.</span></a></li>
-                        <li><a href="about.html">about me<span>.</span></a></li>
-                        <li><a href="contact.html">contact<span>.</span></a></li>
-                  </ul>
-
-                  <div id="toggle">
-                        <div class="span">menu</div>
-                  </div>
-
-            </nav>
-
-            <div id="resize">
-                  <div class="close-btn">close</div>
-
-                  <ul id="menu">
-                        <li><a href="index.html">home<span>.</span></a></li>
-                        <li><a href="skills.html">skills<span>.</span></a></li>
-                        <li><a href="about.html">about me<span>.</span></a></li>
-                        <li><a href="contact.html">contact<span>.</span></a></li>
-                  </ul>
+    <div class="container">
+        <div class="hero">
+            <img src="./mayrel.jpg" alt="Mayrel P. Aris" class="hero-image">
+            <div class="hero-content">
+                <h1>Mayrel P. Aris</h1>
+                <p class="subtitle">Information Technology Student | Web Development Enthusiast</p>
             </div>
-            <!--------------- navbar ends here --------------->
+        </div>
 
+        <div class="section">
+            <h2>About Me</h2>
+            <p>Hi! I am Mayrel P. Aris, a 22-year-old dedicated student pursuing Information Technology at Northern Iloilo State University. Passionate about technological innovation, I'm constantly seeking opportunities to expand my skills and knowledge in the ever-evolving world of IT.</p>
+        </div>
 
-
-            <!--------------- hero section starts here --------------->
-            <div class="hero">
-                  <div class="header">
-                        <h1 class="line anim-typewriter">Hi! I am Mayrel P. Aris .</h1>
-                  </div>
+        <div class="section">
+            <h2>Skills</h2>
+            <div class="skills">
+                <div class="skill-tag">Software Development</div>
+                <div class="skill-tag">Web Development</div>
+                <div class="skill-tag">HTML</div>
+                <div class="skill-tag">CSS</div>
+                <div class="skill-tag">JavaScript</div>
+                <div class="skill-tag">Programming</div>
+                <div class="skill-tag">Time Management</div>
             </div>
+        </div>
 
-            <div class="scroll-down"></div>
-            <!--------------- hero section ends here --------------->
-
-
-
-
-
-            <!--------------- footer starts here --------------->
-            <div class="footer">
-                  <div class="container">
-                        <br><br>
-
-                        <div class="collab">
-                              <div class="row">
-                                    <div class="col-lg-12">
-                                          <p class="wow fadeInUp">Got an interesting project? I can help you.</p>
-                                    </div>
-                              </div>
-                        </div>
-
-                        <br>
-
-                        <div class="hr">
-                              <div class="row"></div>
-                        </div>
-
-                        <br><br>
-
-                        <div class="info">
-                              <div class="row">
-                                    <div class="col-lg-4" id="personal">
-                                          <p class="wow fadeInUp">connect with me</p>
-                                          <h4 class="wow fadeInUp" data-wow-delay="0.2s">ig @Mayrel P. Aris</h4>
-                                          <br><br>
-                                    </div>
-
-                                    <div class="col-lg-4" id="media">
-                                          <p class="wow fadeInUp" data-wow-delay="0s">follow me</p>
-
-                                          <ul>
-                                                <li id="fb" class="wow fadeInUp" data-wow-delay="0.4s">fb</li>
-                                                <li id="ig" class="wow fadeInUp" data-wow-delay="0.6s">ig</li>
-                                                <li id="tw" class="wow fadeInUp" data-wow-delay="0.8s">tw</li>
-                                                <li id="yt" class="wow fadeInUp" data-wow-delay="1s">yt</li>
-                                          </ul>
-
-                                          <br><br>
-                                    </div>
-
-                                    <div class="col-lg-4" id="address">
-                                          <p class="wow fadeInUp" data-wow-delay="0s">say hello</p>
-                                          <h4 class="wow fadeInUp" data-wow-delay="0.2s">Mayrel P. Aris@gmail.com</h4>
-                                          <br><br>
-                                    </div>
-                              </div>
-                        </div>
-                  </div>
+        <div class="section">
+            <h2>Hobbies</h2>
+            <div class="hobbies">
+                <div class="hobby-tag">Photography</div>
+                <div class="hobby-tag">Reading</div>
+                <div class="hobby-tag">Movies</div>
+                <div class="hobby-tag">Dancing</div>
+                <div class="hobby-tag">TikTok</div>
             </div>
-            <!--------------- footer ends here --------------->
+        </div>
 
-            <br><br><br><br>
+        <div class="section">
+            <h2>Education</h2>
+            <p>
+                <strong>Northern Iloilo State University</strong><br>
+                BS Information Technology, 4A<br>
+                Estancia, Iloilo
+            </p>
+        </div>
 
-      </div>
-
-      <!-- greensock cdn -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
-
-      <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-      <script type="text/javascript">
-
-      // navigation starts here
-
-      $("#toggle").click(function() {
-            $(this).toggleClass('on');
-            $("#resize").toggleClass("active");
-      });
-
-      $("#resize ul li a").click(function() {
-            $(this).toggleClass('on');
-            $("#resize").toggleClass("active");
-      });
-
-      $(".close-btn").click(function() {
-            $(this).toggleClass('on');
-            $("#resize").toggleClass("active");
-      });
-
-      // navigation ends here
-
-      // nav animation
-
-      TweenMax.from("#brand", 1, {
-            delay: 0.4,
-            y: 10,
-            opacity: 0,
-            ease: Expo.easeInOut
-      })
-
-      TweenMax.staggerFrom("#menu li a", 1, {
-            delay: 0.4,
-            opacity: 0,
-            ease: Expo.easeInOut
-      }, 0.1);
-
-      // nav animation ends
-
-      new WOW().init();
-
-      </script>
+        <div class="section contact-section">
+            <div class="contact-info">
+                <h2>Contact Me</h2>
+                <p>Pangi Sandionisio, Iloilo</p>
+                <p>09454813739</p>
+                <p>mayrelpacardoaris@gmail.com</p>
+            </div>
+            <div class="contact-icons">
+                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
